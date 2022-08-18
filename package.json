@@ -4,7 +4,12 @@
   "description": "api rest com postgres",
   "main": "src/index.js",
   "scripts": {
-    "start": "nodemon src/server.js"
+    "start": "nodemon src/server.js",
+    "migrate-down": "npx knex migrate:down",
+    "migrate-latest":"npx knex migrate:latest",
+    "migrate-rollback": "npx knex migrate:rollback",
+    "migrate-up": "npx knex migrate:up",
+    "seed-run": "npx knex seed:run"
   },
   "repository": {
     "type": "git",
@@ -17,6 +22,8 @@
   },
   "homepage": "https://github.com/anjoslucas52/api-rest-postgres#readme",
   "dependencies": {
+    "@ev-fns/dotenv": "^1.0.1",
+    "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "pg-promise": "^10.11.1",
     "save": "^2.5.0"
