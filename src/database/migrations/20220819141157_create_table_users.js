@@ -1,10 +1,8 @@
-const { TableName } = require("pg-promise");
-
 /**
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
-exports.up = knex => knex.schema.createTable('users',tabel=> {
+exports.up = knex => knex.schema.createTable('users', table => {
     table.increments('id')
     table.text('username').unique().notNullable()
 
